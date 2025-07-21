@@ -100,6 +100,55 @@
         .tab-content.active {
             display: block;
         }
+        /* Estilos para o formulário de progressão de carga */
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #4a5568;
+        }
+        .form-group select, .form-group input[type="number"] {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            color: #2d3748;
+            background-color: #f7fafc;
+        }
+        .form-group button {
+            background-color: #48bb78; /* Verde */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .form-group button:hover {
+            background-color: #38a169; /* Verde mais escuro */
+        }
+        .result-box {
+            background-color: #e6fffa; /* Verde claro */
+            border-left: 5px solid #38b2ac; /* Borda verde escura */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.5rem;
+            color: #2c7a7b; /* Texto verde escuro */
+            font-weight: 600;
+        }
+        .exercise-suggestion {
+            font-size: 0.9rem;
+            color: #6b7280; /* Cinza mais claro para a sugestão */
+            margin-left: 1rem;
+        }
+        .exercise-suggestion strong {
+            color: #10b981; /* Verde forte para o peso sugerido */
+        }
     </style>
 </head>
 <body>
@@ -109,6 +158,7 @@
         <div class="tab-buttons">
             <button class="tab-button active" onclick="showTab('dieta-content')">Dieta</button>
             <button class="tab-button" onclick="showTab('treino-content')">Treino</button>
+            <button class="tab-button" onclick="showTab('progressao-carga-content')">Progressão de Carga</button>
         </div>
 
         <div id="dieta-content" class="tab-content active">
@@ -169,55 +219,8 @@
             <p><strong class="meal-time">Exemplo de Rotina de Treino (Adaptável à sua academia):</strong></p>
             <p>Para todos os exercícios, realize <strong>3 séries de 8-12 repetições</strong>, com <strong>60-90 segundos de descanso</strong> entre as séries. Se a técnica começar a falhar, diminua a carga. O importante é a qualidade do movimento.</p>
 
-            <p class="meal-time">Dia 1: Posterior de Perna e Glúteos</p>
-            <ol class="list-decimal ml-6">
-                <li>Mesa Flexora (3 séries de 8-12 repetições)</li>
-                <li>Cadeira Flexora (ou Stiff com Halteres) (3 séries de 8-12 repetições)</li>
-                <li>Elevação Pélvica (Glute Bridge) (3 séries de 8-12 repetições)</li>
-                <li>Cadeira Adutora (3 séries de 8-12 repetições)</li>
-                <li>Agachamento Sumô com Halteres (3 séries de 8-12 repetições)</li>
-            </ol>
-
-            <p class="meal-time">Dia 2: Peito e Tríceps</p>
-            <ol class="list-decimal ml-6">
-                <li>Supino Reto com Barra ou Halteres (3 séries de 8-12 repetições)</li>
-                <li>Supino Inclinado com Halteres (3 séries de 8-12 repetições)</li>
-                <li>Crucifixo na Máquina ou com Halteres (voador) (3 séries de 8-12 repetições)</li>
-                <li>Tríceps Testa com Barra W ou Halteres (3 séries de 8-12 repetições)</li>
-                <li>Tríceps Pulley (corda ou barra reta) (3 séries de 8-12 repetições)</li>
-                <li>Flexão Declinada (3 séries de 8-12 repetições)</li>
-            </ol>
-
-            <p class="meal-time">Dia 3: Costas e Bíceps</p>
-            <ol class="list-decimal ml-6">
-                <li>Puxada Alta na Polia (Lat Pulldown) (3 séries de 8-12 repetições)</li>
-                <li>Remada Baixa na Polia (Remada Sentada) (3 séries de 8-12 repetições)</li>
-                <li>Remada Curvada com Barra ou Halteres (3 séries de 8-12 repetições)</li>
-                <li>Rosca Direta com Barra (3 séries de 8-12 repetições)</li>
-                <li>Rosca Alternada com Halteres (3 séries de 8-12 repetições)</li>
-                <li>Rosca Concentrada (3 séries de 8-12 repetições)</li>
-            </ol>
-
-            <p class="meal-time">Dia 4: Quadríceps e Panturrilhas</p>
-            <ol class="list-decimal ml-6">
-                <li>Agachamento Livre (comece com o peso corporal e progrida para barra guiada ou halteres) (3 séries de 8-12 repetições)</li>
-                <li>Leg Press (3 séries de 8-12 repetições)</li>
-                <li>Cadeira Extensora (3 séries de 8-12 repetições)</li>
-                <li>Passada com Halteres (3 séries de 8-12 repetições)</li>
-                <li>Elevação de Panturrilhas em Pé (3 séries de 15-20 repetições)</li>
-                <li>Elevação de Panturrilhas Sentado (3 séries de 15-20 repetições)</li>
-            </ol>
-
-            <p class="meal-time">Dia 5: Ombros e Abdômen</p>
-            <ol class="list-decimal ml-6">
-                <li>Desenvolvimento com Halteres ou Máquina (shoulder press) (3 séries de 8-12 repetições)</li>
-                <li>Elevação Lateral com Halteres (3 séries de 8-12 repetições)</li>
-                <li>Elevação Frontal com Halteres (3 séries de 8-12 repetições)</li>
-                <li>Remada Alta com Barra ou Halteres (3 séries de 8-12 repetições)</li>
-                <li>Prancha (3 séries, segurar por 30-60 segundos)</li>
-                <li>Abdominal Crunch (3 séries de 15-20 repetições)</li>
-                <li>Abdominal Remador (3 séries de 15-20 repetições)</li>
-            </ol>
+            <!-- Conteúdo do treino será renderizado dinamicamente aqui -->
+            <div id="treino-dinamico-content"></div>
 
             <div class="important-note">
                 <p class="font-bold">Considerações importantes para o treino:</p>
@@ -226,30 +229,241 @@
                     <li><strong>Progressão de Carga:</strong> O ganho de força acontece quando você desafia seus músculos. Quando conseguir fazer 12 repetições com boa forma em um exercício, tente aumentar um pouco a carga na próxima sessão.</li>
                     <li><strong>Forma é tudo:</strong> Priorize a execução correta do movimento em detrimento da carga. Uma boa forma previne lesões e garante que o músculo alvo esteja sendo trabalhado de forma eficaz.</li>
                     <li><strong>Descanso:</strong> O descanso é tão importante quanto o treino. Seus músculos crescem e se recuperam enquanto você descansa. Procure dormir de 7 a 9 horas por noite.</li>
-                    <li><strong>Escute seu corpo:</strong> Se sentir dor aguda ou pontadas durante um exercício, pare imediatamente. Dores musculares pós-treino (aquelas que aparecem um ou dois dias depois) são normais, mas dores nas articulações não são.</li>
+                    <li><strong>Escute seu corpo:</strong> Se sentir dor aguda ou pontadas durante um exercício, pare imediatamente. Dores musculares pós-treino (aqueles que aparecem um ou dois dias depois) são normais, mas dores nas articulações não são.</li>
                     <li><strong>Consistência:</strong> A chave para o sucesso a longo prazo é a consistência. Mantenha-se firme na dieta e nos treinos, mesmo nos dias em que a motivação estiver baixa.</li>
                     <li><strong>Profissional:</strong> Considere procurar um profissional de educação física para te acompanhar na academia e ajustar os treinos conforme sua evolução.</li>
                 </ul>
             </div>
         </div>
+
+        <div id="progressao-carga-content" class="tab-content">
+            <h2 id="progressao-carga">Calculadora de Progressão de Carga</h2>
+            <p>Use esta ferramenta para registrar seus treinos e receber sugestões de progressão de carga. Quando você conseguir realizar 12 repetições com boa forma em um exercício, a ferramenta sugerirá um aumento de carga.</p>
+
+            <div class="form-group">
+                <label for="diaTreino">Selecione o Dia de Treino:</label>
+                <select id="diaTreino" onchange="popularExercicios()" class="w-full p-2 border border-gray-300 rounded-md">
+                    <option value="">Selecione um dia</option>
+                    <option value="Dia 1: Posterior de Perna e Glúteos">Dia 1: Posterior de Perna e Glúteos</option>
+                    <option value="Dia 2: Peito e Tríceps">Dia 2: Peito e Tríceps</option>
+                    <option value="Dia 3: Costas e Bíceps">Dia 3: Costas e Bíceps</option>
+                    <option value="Dia 4: Quadríceps e Panturrilhas">Dia 4: Quadríceps e Panturrilhas</option>
+                    <option value="Dia 5: Ombros e Abdômen">Dia 5: Ombros e Abdômen</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="exercicio">Selecione o Exercício:</label>
+                <select id="exercicio" class="w-full p-2 border border-gray-300 rounded-md" disabled>
+                    <option value="">Selecione um exercício</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="pesoAtual">Peso Atual (kg):</label>
+                <input type="number" id="pesoAtual" placeholder="Ex: 20" class="w-full p-2 border border-gray-300 rounded-md">
+            </div>
+
+            <div class="form-group">
+                <label for="repeticoes">Repetições Realizadas:</label>
+                <input type="number" id="repeticoes" placeholder="Ex: 12" class="w-full p-2 border border-gray-300 rounded-md">
+            </div>
+
+            <div class="form-group">
+                <button onclick="calcularProgressao()" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg">Calcular Sugestão</button>
+            </div>
+
+            <div id="resultadoProgressao" class="result-box hidden">
+                <!-- O resultado do cálculo será exibido aqui -->
+            </div>
+        </div>
     </div>
 
     <script>
+        // Dados dos exercícios e seus estados de progressão
+        const exerciciosData = {
+            "Dia 1: Posterior de Perna e Glúteos": [
+                { name: "Mesa Flexora", lastWeight: null, lastReps: null, suggestedNextWeight: null },
+                { name: "Cadeira Flexora (ou Stiff com Halteres)", lastWeight: null, lastReps: null, suggestedNextWeight: null },
+                { name: "Elevação Pélvica (Glute Bridge)", lastWeight: null, lastReps: null, suggestedNextWeight: null },
+                { name: "Cadeira Adutora", lastWeight: null, lastReps: null, suggestedNextWeight: null },
+                { name: "Agachamento Sumô com Halteres", lastWeight: null, lastReps: null, suggestedNextWeight: null }
+            ],
+            "Dia 2: Peito e Tríceps": [
+                { name: "Supino Reto com Barra ou Halteres", lastWeight: null, lastReps: null, suggestedNextWeight: null },
+                { name: "Supino Inclinado com Halteres", lastWeight: null, lastReps: null, suggestedNextWeight: null },
+                { name: "Crucifixo na Máquina ou com Halteres (voador)", lastWeight: null, lastReps: null, suggestedNextWeight: null },
+                { name: "Tríceps Testa com Barra W ou Halteres", lastWeight: null, lastReps: null, suggestedNextWeight: null },
+                { name: "Tríceps Pulley (corda ou barra reta)", lastWeight: null, lastReps: null, suggestedNextWeight: null },
+                { name: "Flexão Declinada", lastWeight: null, lastReps: null, suggestedNextWeight: null }
+            ],
+            "Dia 3: Costas e Bíceps": [
+                { name: "Puxada Alta na Polia (Lat Pulldown)", lastWeight: null, lastReps: null, suggestedNextWeight: null },
+                { name: "Remada Baixa na Polia (Remada Sentada)", lastWeight: null, lastReps: null, suggestedNextWeight: null },
+                { name: "Remada Curvada com Barra ou Halteres", lastWeight: null, lastReps: null, suggestedNextWeight: null },
+                { name: "Rosca Direta com Barra", lastWeight: null, lastReps: null, suggestedNextWeight: null },
+                { name: "Rosca Alternada com Halteres", lastWeight: null, lastReps: null, suggestedNextWeight: null },
+                { name: "Rosca Concentrada", lastWeight: null, lastReps: null, suggestedNextWeight: null }
+            ],
+            "Dia 4: Quadríceps e Panturrilhas": [
+                { name: "Agachamento Livre", lastWeight: null, lastReps: null, suggestedNextWeight: null },
+                { name: "Leg Press", lastWeight: null, lastReps: null, suggestedNextWeight: null },
+                { name: "Cadeira Extensora", lastWeight: null, lastReps: null, suggestedNextWeight: null },
+                { name: "Passada com Halteres", lastWeight: null, lastReps: null, suggestedNextWeight: null },
+                { name: "Elevação de Panturrilhas em Pé", lastWeight: null, lastReps: null, suggestedNextWeight: null },
+                { name: "Elevação de Panturrilhas Sentado", lastWeight: null, lastReps: null, suggestedNextWeight: null }
+            ],
+            "Dia 5: Ombros e Abdômen": [
+                { name: "Desenvolvimento com Halteres ou Máquina (shoulder press)", lastWeight: null, lastReps: null, suggestedNextWeight: null },
+                { name: "Elevação Lateral com Halteres", lastWeight: null, lastReps: null, suggestedNextWeight: null },
+                { name: "Elevação Frontal com Halteres", lastWeight: null, lastReps: null, suggestedNextWeight: null },
+                { name: "Remada Alta com Barra ou Halteres", lastWeight: null, lastReps: null, suggestedNextWeight: null },
+                { name: "Prancha", lastWeight: null, lastReps: null, suggestedNextWeight: null },
+                { name: "Abdominal Crunch", lastWeight: null, lastReps: null, suggestedNextWeight: null },
+                { name: "Abdominal Remador", lastWeight: null, lastReps: null, suggestedNextWeight: null }
+            ]
+        };
+
+        // Função para mostrar a aba selecionada
         function showTab(tabId) {
-            // Remove 'active' class from all tab contents
+            // Remove a classe 'active' de todos os conteúdos das abas
             document.querySelectorAll('.tab-content').forEach(function(tabContent) {
                 tabContent.classList.remove('active');
             });
-            // Remove 'active' class from all tab buttons
+            // Remove a classe 'active' de todos os botões das abas
             document.querySelectorAll('.tab-button').forEach(function(tabButton) {
                 tabButton.classList.remove('active');
             });
 
-            // Add 'active' class to the selected tab content
+            // Adiciona a classe 'active' ao conteúdo da aba selecionada
             document.getElementById(tabId).classList.add('active');
-            // Add 'active' class to the clicked button
+            // Adiciona a classe 'active' ao botão clicado
             event.currentTarget.classList.add('active');
+
+            // Se a aba de treino for ativada, renderiza o conteúdo dinamicamente
+            if (tabId === 'treino-content') {
+                renderTreinoContent();
+            }
         }
+
+        // Função para popular o dropdown de exercícios com base no dia selecionado
+        function popularExercicios() {
+            const diaTreinoSelect = document.getElementById('diaTreino');
+            const exercicioSelect = document.getElementById('exercicio');
+            const diaSelecionado = diaTreinoSelect.value;
+
+            // Limpa as opções anteriores
+            exercicioSelect.innerHTML = '<option value="">Selecione um exercício</option>';
+            exercicioSelect.disabled = true; // Desabilita até que um dia seja selecionado
+
+            if (diaSelecionado && exerciciosData[diaSelecionado]) {
+                exerciciosData[diaSelecionado].forEach(exercicio => {
+                    const option = document.createElement('option');
+                    option.value = exercicio.name;
+                    option.textContent = exercicio.name;
+                    exercicioSelect.appendChild(option);
+                });
+                exercicioSelect.disabled = false; // Habilita o dropdown de exercícios
+            }
+        }
+
+        // Função para calcular a progressão de carga e salvar os dados
+        function calcularProgressao() {
+            const diaTreino = document.getElementById('diaTreino').value;
+            const exercicioNome = document.getElementById('exercicio').value;
+            const pesoAtual = parseFloat(document.getElementById('pesoAtual').value);
+            const repeticoes = parseInt(document.getElementById('repeticoes').value);
+            const resultadoDiv = document.getElementById('resultadoProgressao');
+
+            // Validação de entrada
+            if (!diaTreino || !exercicioNome || isNaN(pesoAtual) || isNaN(repeticoes) || pesoAtual <= 0 || repeticoes <= 0) {
+                resultadoDiv.classList.remove('hidden');
+                resultadoDiv.innerHTML = '<p class="text-red-700">Por favor, preencha todos os campos com valores válidos.</p>';
+                resultadoDiv.style.backgroundColor = '#fee2e2'; /* Vermelho claro para erro */
+                resultadoDiv.style.borderColor = '#ef4444'; /* Borda vermelha escura */
+                resultadoDiv.style.color = '#dc2626'; /* Texto vermelho escuro */
+                return;
+            }
+
+            // Encontra o exercício no objeto de dados
+            const diaExercicios = exerciciosData[diaTreino];
+            const exercicioObj = diaExercicios ? diaExercicios.find(ex => ex.name === exercicioNome) : null;
+
+            if (exercicioObj) {
+                exercicioObj.lastWeight = pesoAtual;
+                exercicioObj.lastReps = repeticoes;
+
+                let sugestaoMensagem = '';
+                let novoPeso = pesoAtual;
+
+                // Lógica de progressão de carga: se atingiu 12 repetições, sugere aumento
+                if (repeticoes >= 12) {
+                    const aumentoPercentual = pesoAtual * 0.05;
+                    const aumentoFixo = 2.5; // Sugestão de aumento fixo em kg
+                    const aumentoMinimo = 1; // Aumento mínimo para pesos muito baixos
+
+                    novoPeso = pesoAtual + Math.max(aumentoPercentual, aumentoFixo, aumentoMinimo);
+                    novoPeso = Math.ceil(novoPeso / 0.5) * 0.5; // Arredonda para o próximo 0.5kg ou 1kg mais próximo
+                    exercicioObj.suggestedNextWeight = novoPeso;
+                    sugestaoMensagem = `Parabéns! Você atingiu ${repeticoes} repetições. Tente aumentar a carga para <strong class="text-green-800">${novoPeso.toFixed(1)} kg</strong> na próxima sessão.`;
+                } else {
+                    exercicioObj.suggestedNextWeight = pesoAtual; // Mantém o mesmo peso
+                    sugestaoMensagem = `Mantenha a carga atual de <strong class="text-blue-800">${pesoAtual.toFixed(1)} kg</strong> e continue focando em atingir 12 repetições com boa forma.`;
+                }
+
+                // Exibe o resultado na aba de progressão
+                resultadoDiv.classList.remove('hidden');
+                resultadoDiv.innerHTML = `
+                    <p><strong>Dia de Treino:</strong> ${diaTreino}</p>
+                    <p><strong>Exercício:</strong> ${exercicioNome}</p>
+                    <p><strong>Peso Registrado:</strong> ${pesoAtual.toFixed(1)} kg</p>
+                    <p><strong>Repetições Registradas:</strong> ${repeticoes}</p>
+                    <p>${sugestaoMensagem}</p>
+                    <p class="mt-2 text-sm text-gray-600">Lembre-se: A forma correta é sempre mais importante que a carga. Ajuste conforme seu corpo responde.</p>
+                `;
+                resultadoDiv.style.backgroundColor = '#e6fffa'; /* Verde claro para sucesso */
+                resultadoDiv.style.borderColor = '#38b2ac'; /* Borda verde escura */
+                resultadoDiv.style.color = '#2c7a7b'; /* Texto verde escuro */
+
+                // Atualiza a exibição do treino para mostrar a sugestão
+                renderTreinoContent();
+
+            } else {
+                resultadoDiv.classList.remove('hidden');
+                resultadoDiv.innerHTML = '<p class="text-red-700">Erro: Exercício não encontrado para o dia selecionado.</p>';
+                resultadoDiv.style.backgroundColor = '#fee2e2';
+                resultadoDiv.style.borderColor = '#ef4444';
+                resultadoDiv.style.color = '#dc2626';
+            }
+        }
+
+        // Função para renderizar o conteúdo da aba de treino dinamicamente
+        function renderTreinoContent() {
+            const treinoContentDiv = document.getElementById('treino-dinamico-content');
+            let htmlContent = '';
+
+            for (const dia in exerciciosData) {
+                htmlContent += `<p class="meal-time">${dia}</p>`;
+                htmlContent += `<ol class="list-decimal ml-6">`;
+                exerciciosData[dia].forEach(exercicio => {
+                    let suggestionText = '';
+                    if (exercicio.lastWeight !== null && exercicio.lastReps !== null) {
+                        suggestionText = `<span class="exercise-suggestion">(Último: ${exercicio.lastWeight.toFixed(1)} kg x ${exercicio.lastReps} reps`;
+                        if (exercicio.suggestedNextWeight !== null) {
+                            suggestionText += ` - Sugestão: <strong>${exercicio.suggestedNextWeight.toFixed(1)} kg</strong>)`;
+                        } else {
+                            suggestionText += `)`;
+                        }
+                    }
+                    htmlContent += `<li>${exercicio.name} (3 séries de 8-12 repetições)${suggestionText}</li>`;
+                });
+                htmlContent += `</ol>`;
+            }
+            treinoContentDiv.innerHTML = htmlContent;
+        }
+
+        // Renderiza o conteúdo do treino na carga inicial
+        document.addEventListener('DOMContentLoaded', renderTreinoContent);
     </script>
 </body>
 </html>
