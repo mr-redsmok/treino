@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano de Dieta e Treino</title>
+    <!-- Incluindo Tailwind CSS para estilização moderna e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Definindo a fonte Inter para todo o corpo */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Cor de fundo suave */
+            color: #333;
+            line-height: 1.6;
+        }
+        /* Estilos para o container principal */
+        .container {
+            max-width: 960px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #ffffff;
+            border-radius: 1rem; /* Cantos arredondados */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+        /* Estilos para títulos principais */
+        h1 {
+            color: #1a202c; /* Cor escura para o título */
+            font-size: 2.5rem; /* Tamanho maior para o título principal */
+            font-weight: 700; /* Negrito */
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #edf2f7; /* Linha sutil abaixo do título */
+        }
+        /* Estilos para subtítulos */
+        h2 {
+            color: #2d3748; /* Cor um pouco mais clara que o h1 */
+            font-size: 2rem;
+            font-weight: 600;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        /* Estilos para parágrafos */
+        p {
+            margin-bottom: 1rem;
+        }
+        /* Estilos para listas */
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        /* Estilo para notas importantes */
+        .important-note {
+            background-color: #e0f2f7; /* Azul claro */
+            border-left: 5px solid #3182ce; /* Borda azul mais escura */
+            padding: 1rem;
+            margin: 2rem 0;
+            border-radius: 0.5rem;
+            color: #2c5282; /* Texto azul escuro */
+        }
+        .meal-time {
+            font-weight: bold;
+            color: #4a5568; /* Cor mais escura para o tempo da refeição */
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.125rem; /* Tamanho um pouco maior */
+        }
+        strong {
+            color: #2b6cb0; /* Azul para destaque */
+        }
+        /* Estilos para as abas de navegação */
+        .tab-buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            gap: 1rem;
+        }
+        .tab-button {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            background-color: #cbd5e0; /* Cinza claro */
+            color: #2d3748; /* Texto escuro */
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .tab-button.active {
+            background-color: #3182ce; /* Azul */
+            color: #ffffff; /* Texto branco */
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Seu Plano de Dieta e Treino</h1>
+
+        <div class="tab-buttons">
+            <button class="tab-button active" onclick="showTab('dieta-content')">Dieta</button>
+            <button class="tab-button" onclick="showTab('treino-content')">Treino</button>
+        </div>
+
+        <div id="dieta-content" class="tab-content active">
+            <h2 id="dieta">Dieta</h2>
+            <p>Olá! Que bom que você está de volta aos treinos! Com seu objetivo de perder barriga e ganhar músculos, e com base nos alimentos que você prefere (ovo, arroz, frango, banana, aveia e whey), montei um plano de dieta com 4 refeições, incluindo uma líquida, para te ajudar a alcançar seus resultados.</p>
+
+            <p class="meal-time">Refeição 1: Café da Manhã (Líquida)</p>
+            <ul class="list-disc ml-6">
+                <li><strong>Ingredientes:</strong> 1 scoop de whey protein, 1 banana média, 3 colheres de sopa de aveia em flocos finos, 200 ml de água ou leite desnatado.</li>
+                <li><strong>Preparo:</strong> Bata todos os ingredientes no liquidificador até obter uma mistura homogênea.</li>
+                <li><strong>Benefícios:</strong> Ideal para começar o dia com uma boa dose de proteína e carboidratos de rápida absorção, fornecendo energia para o treino e auxiliando na recuperação muscular.</li>
+            </ul>
+
+            <p class="meal-time">Refeição 2: Almoço</p>
+            <ul class="list-disc ml-6">
+                <li><strong>Ingredientes:</strong> 150g de peito de frango grelhado ou desfiado, 6 colheres de sopa de arroz integral cozido, salada à vontade (folhas verdes, tomate, pepino, cenoura ralada) temperada com um fio de azeite extra virgem e limão.</li>
+                <li><strong>Benefícios:</strong> Proteína magra essencial para a construção muscular, carboidratos complexos para energia sustentada e fibras dos vegetais para saciedade e saúde intestinal.</li>
+            </ul>
+
+            <p class="meal-time">Refeição 3: Lanche da Tarde</p>
+            <ul class="list-disc ml-6">
+                <li><strong>Ingredientes:</strong> 3 ovos cozidos ou mexidos (use um pouco de água para fazer os ovos mexidos, sem óleo), 1 banana média.</li>
+                <li><strong>Benefícios:</strong> Ótima fonte de proteína de alto valor biológico para a recuperação muscular e potássio da banana, importante para a função muscular e prevenção de cãibras.</li>
+            </ul>
+
+            <p class="meal-time">Refeição 4: Jantar</p>
+            <ul class="list-disc ml-6">
+                <li><strong>Ingredientes:</strong> 150g de peito de frango grelhado ou desfiado, 4 colheres de sopa de arroz integral cozido, salada à vontade (folhas verdes, tomate, pepino, brócolis cozido no vapor) temperada com um fio de azeite extra virgem e vinagre de maçã.</li>
+                <li><strong>Benefícios:</strong> Similar ao almoço, porém com uma porção ligeiramente menor de carboidratos, focando na proteína para a recuperação muscular durante o sono.</li>
+            </ul>
+
+            <div class="important-note">
+                <p class="font-bold">Considerações importantes para a dieta:</p>
+                <ul class="list-disc ml-6">
+                    <li><strong>Hidratação:</strong> Beba pelo menos 2-3 litros de água por dia. A água é crucial para o metabolismo, transporte de nutrientes e recuperação muscular.</li>
+                    <li><strong>Ajustes:</strong> Esta é uma sugestão inicial. Observe como seu corpo reage. Se sentir muita fome, pode aumentar a quantidade de vegetais. Se sentir que está comendo demais, ajuste as porções.</li>
+                    <li><strong>Cozimento:</strong> Prefira métodos de cozimento saudáveis como grelhar, assar, cozinhar a vapor ou usar a air fryer. Evite frituras e excesso de óleos.</li>
+                    <li><strong>Variação:</strong> Embora a dieta seja baseada nos alimentos que você mencionou, sinta-se à vontade para variar os tipos de salada e temperos naturais (ervas, especiarias) para manter a dieta interessante.</li>
+                    <li><strong>Consistência:</strong> A chave para o sucesso da dieta é a consistência. Siga o plano o máximo possível.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="treino-content" class="tab-content">
+            <h2 id="treino">Treino para Ganho de Força e Massa Muscular (5 Dias)</h2>
+            <p>É completamente normal sentir perda de força ao retornar aos treinos após um período de inatividade. Nosso foco será na <strong>progressão de carga</strong> e na <strong>execução correta dos movimentos</strong>. Começaremos com cargas mais leves para priorizar a técnica e aumentaremos gradualmente para construir sua força novamente.</p>
+
+            <p><strong class="meal-time">Frequência:</strong> 5 dias de treino de força por semana, com 2 dias de descanso ativo (caminhada leve, alongamento) ou descanso total para permitir a recuperação muscular.</p>
+            <p><strong class="meal-time">Divisão de Treino Sugerida:</strong></p>
+            <ul class="list-disc ml-6">
+                <li><strong>Dia 1:</strong> Posterior de Perna e Glúteos</li>
+                <li><strong>Dia 2:</strong> Peito e Tríceps</li>
+                <li><strong>Dia 3:</strong> Costas e Bíceps</li>
+                <li><strong>Dia 4:</strong> Quadríceps e Panturrilhas</li>
+                <li><strong>Dia 5:</strong> Ombros e Abdômen</li>
+            </ul>
+
+            <p><strong class="meal-time">Exemplo de Rotina de Treino (Adaptável à sua academia):</strong></p>
+            <p>Para todos os exercícios, realize <strong>3 séries de 8-12 repetições</strong>, com <strong>60-90 segundos de descanso</strong> entre as séries. Se a técnica começar a falhar, diminua a carga. O importante é a qualidade do movimento.</p>
+
+            <p class="meal-time">Dia 1: Posterior de Perna e Glúteos</p>
+            <ol class="list-decimal ml-6">
+                <li>Mesa Flexora</li>
+                <li>Cadeira Flexora (ou Stiff com Halteres)</li>
+                <li>Elevação Pélvica (Glute Bridge)</li>
+                <li>Cadeira Adutora</li> <!-- Substituição para "Afundo" -->
+                <li>Agachamento Sumô com Halteres</li>
+            </ol>
+
+            <p class="meal-time">Dia 2: Peito e Tríceps</p>
+            <ol class="list-decimal ml-6">
+                <li>Supino Reto com Barra ou Halteres</li>
+                <li>Supino Inclinado com Halteres</li>
+                <li>Crucifixo na Máquina ou com Halteres (voador)</li>
+                <li>Tríceps Testa com Barra W ou Halteres</li>
+                <li>Tríceps Pulley (corda ou barra reta)</li>
+                <li>Flexão Declinada</li> <!-- Substituição para "Paralelas" -->
+            </ol>
+
+            <p class="meal-time">Dia 3: Costas e Bíceps</p>
+            <ol class="list-decimal ml-6">
+                <li>Puxada Alta na Polia (Lat Pulldown)</li>
+                <li>Remada Baixa na Polia (Remada Sentada)</li>
+                <li>Remada Curvada com Barra ou Halteres</li>
+                <li>Rosca Direta com Barra</li>
+                <li>Rosca Alternada com Halteres</li>
+                <li>Rosca Concentrada</li>
+            </ol>
+
+            <p class="meal-time">Dia 4: Quadríceps e Panturrilhas</p>
+            <ol class="list-decimal ml-6">
+                <li>Agachamento Livre (comece com o peso corporal e progrida para barra guiada ou halteres)</li>
+                <li>Leg Press</li>
+                <li>Cadeira Extensora</li>
+                <li>Passada com Halteres</li> <!-- Substituição para "Agachamento Búlgaro" -->
+                <li>Elevação de Panturrilhas em Pé</li>
+                <li>Elevação de Panturrilhas Sentado</li>
+            </ol>
+
+            <p class="meal-time">Dia 5: Ombros e Abdômen</p>
+            <ol class="list-decimal ml-6">
+                <li>Desenvolvimento com Halteres ou Máquina (shoulder press)</li>
+                <li>Elevação Lateral com Halteres</li>
+                <li>Elevação Frontal com Halteres</li>
+                <li>Remada Alta com Barra ou Halteres</li>
+                <li>Prancha (segurar por 30-60 segundos)</li>
+                <li>Abdominal Crunch</li>
+                <li>Abdominal Remador</li>
+            </ol>
+
+            <div class="important-note">
+                <p class="font-bold">Considerações importantes para o treino:</p>
+                <ul class="list-disc ml-6">
+                    <li><strong>Aquecimento:</strong> Sempre inicie o treino com 5-10 minutos de aquecimento aeróbico leve (esteira, bicicleta elíptica) e alguns alongamentos dinâmicos.</li>
+                    <li><strong>Progressão de Carga:</strong> O ganho de força acontece quando você desafia seus músculos. Quando conseguir fazer 12 repetições com boa forma em um exercício, tente aumentar um pouco a carga na próxima sessão.</li>
+                    <li><strong>Forma é tudo:</strong> Priorize a execução correta do movimento em detrimento da carga. Uma boa forma previne lesões e garante que o músculo alvo esteja sendo trabalhado de forma eficaz.</li>
+                    <li><strong>Descanso:</strong> O descanso é tão importante quanto o treino. Seus músculos crescem e se recuperam enquanto você descansa. Procure dormir de 7 a 9 horas por noite.</li>
+                    <li><strong>Escute seu corpo:</strong> Se sentir dor aguda ou pontadas durante um exercício, pare imediatamente. Dores musculares pós-treino (aquelas que aparecem um ou dois dias depois) são normais, mas dores nas articulações não são.</li>
+                    <li><strong>Consistência:</strong> A chave para o sucesso a longo prazo é a consistência. Mantenha-se firme na dieta e nos treinos, mesmo nos dias em que a motivação estiver baixa.</li>
+                    <li><strong>Profissional:</strong> Considere procurar um profissional de educação física para te acompanhar na academia e ajustar os treinos conforme sua evolução.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabId) {
+            // Remove 'active' class from all tab contents
+            document.querySelectorAll('.tab-content').forEach(function(tabContent) {
+                tabContent.classList.remove('active');
+            });
+            // Remove 'active' class from all tab buttons
+            document.querySelectorAll('.tab-button').forEach(function(tabButton) {
+                tabButton.classList.remove('active');
+            });
+
+            // Add 'active' class to the selected tab content
+            document.getElementById(tabId).classList.add('active');
+            // Add 'active' class to the clicked button
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
